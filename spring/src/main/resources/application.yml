@@ -7,3 +7,8 @@ spring:
 #    url:
 #    username:
 #    password:
+
+logging:
+  level:
+    io:
+      netty: DEBUG
