@@ -1,9 +1,9 @@
 package com.hack.backend.user.controller;
 
-import com.hack.backend.user.dto.JoinRequestDto;
-import com.hack.backend.user.dto.JoinResponseDto;
+import com.hack.backend.user.dto.*;
 import com.hack.backend.user.entity.User;
 import com.hack.backend.user.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +19,8 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/login")
-    public User login(@RequestBody User user) {
-        return user;
+    public ResponseEntity<LoginResponseDto> login(@Valid @RequestBody LoginRequestDto loginRequestDto) {
+        return ResponseEntity.ok("로그인 성공");
     }
 
     @PostMapping("/join")
@@ -30,7 +30,12 @@ public class UserController {
     }
 
     @PostMapping("/logout")
-    public User logout(@RequestBody User user) {
-        return user; //추후 스프링 시큐리티 logout
+    public ResponseEntity<LogoutResponseDto> logout(HttpServletRequest request) {
+        String token = request.getHeader("Authorization");
+        if (token != null && token.startsWith("Bearer ")) {
+            token = token.substring(7);
+            //redis에 토큰 삭제
+        }
+        return ResponseEntity.ok(new LogoutResponseDto("로그아웃되었습니다."));
     }
 }

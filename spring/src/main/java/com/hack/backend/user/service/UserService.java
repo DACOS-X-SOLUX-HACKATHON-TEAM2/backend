@@ -4,6 +4,7 @@ import com.hack.backend.user.dto.JoinRequestDto;
 import com.hack.backend.user.entity.User;
 import com.hack.backend.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class UserService {
     private final UserRepository userRepository;
-    //private final PasswordEncoder encoder;
+    private final BCryptPasswordEncoder passwordEncoder;
 
     @Transactional
     public User join(JoinRequestDto request) {
@@ -20,7 +21,7 @@ public class UserService {
         }
         User user = User.builder()
                 .id(request.id())
-                .password(request.password())
+                .password(passwordEncoder.encode(request.password()))
                 .build();
 
         return userRepository.save(user);
