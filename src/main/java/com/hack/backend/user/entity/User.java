@@ -19,14 +19,18 @@ public class User {
     private String id;
 
     @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
     private String password;
 
     @Column
     private int type; //피부타입 건성 지성 복합성
 
     @Builder
-    public User(String id, String password, int type) {
+    public User(String id, String name,String password, int type) {
         this.id = id;
+        this.name = name;
         this.password = password;
         this.type = type;
     }

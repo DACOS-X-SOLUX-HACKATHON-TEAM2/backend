@@ -18,16 +18,16 @@ public class UserService {
     private final JwtUtil jwtUtil;
 
     @Transactional
-    public User join(JoinRequestDto request) {
+    public void join(JoinRequestDto request) {
         if (userRepository.existsById(request.id())) {
             throw new IllegalArgumentException("사용자가 이미 있습니다.");
         }
         User user = User.builder()
+                .name(request.name())
                 .id(request.id())
                 .password(passwordEncoder.encode(request.password()))
                 .build();
-
-        return userRepository.save(user);
+        userRepository.save(user);
     }
 
     @Transactional
