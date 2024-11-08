@@ -2,6 +2,7 @@ spring:
   application:
     name: backend
     # in application.properties
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/sooktin
@@ -24,3 +25,4 @@ jwt:
   issuer: okm
   access-expiration: 360000
   secret-key: cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ
+
