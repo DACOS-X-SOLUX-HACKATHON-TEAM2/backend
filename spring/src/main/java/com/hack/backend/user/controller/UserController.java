@@ -20,7 +20,8 @@ public class UserController {
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDto> login(@Valid @RequestBody LoginRequestDto loginRequestDto) {
-        return ResponseEntity.ok("로그인 성공");
+        String token = userService.login(loginRequestDto);
+        return ResponseEntity.ok(new LoginResponseDto("로그인하였습니다.", token));
     }
 
     @PostMapping("/join")

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hack.backend.user.ServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-08T14:21:10" hostname="MacBook-Air-6.local" time="0.385">
+  <properties/>
+  <testcase name="login_success()" classname="com.hack.backend.user.ServiceTest" time="0.385"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

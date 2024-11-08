@@ -12,5 +12,8 @@ public record JoinRequestDto(
         @NotBlank(message = "비밀번호는 필수입니다")
         @Pattern(regexp = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$",
                 message = "비밀번호는 8자 이상, 영문/숫자 조합이어야 합니다")
-        String password
+        String password,
+
+        @NotBlank(message = "이름은 필수입니다")
+        String name
 ) {}

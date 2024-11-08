@@ -1,18 +1,31 @@
 package com.hack.backend.likes.entity;
 
 import com.hack.backend.cosmetics.entity.Cosmetics;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import com.hack.backend.user.entity.User;
+import jakarta.persistence.*;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.stereotype.Controller;
 
+
 @Controller
+@Builder
+@Getter
+@Entity
 public class Likes {
 
-//    @OneToMany
-//    @JoinColumn(name = "user_id")
-//    private User user;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
 
-    @OneToMany
+    @OneToOne(fetch= FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @OneToMany(fetch= FetchType.LAZY)
     @JoinColumn(name="cosmetics_id")
     private Cosmetics cosmetics;
+
+
 }
