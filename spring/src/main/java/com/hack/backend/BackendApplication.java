@@ -14,7 +14,7 @@ public class BackendApplication {
 		SpringApplication.run(BackendApplication.class, args);
 	}
 
-	@Bean
+	/*@Bean
 	public CommandLineRunner run(FastApiClient fastApiClient) {
 		return args -> fastApiClient.callFastApi();
 	}
@@ -22,6 +22,6 @@ public class BackendApplication {
 	@Bean
 	public WebClient webClient() {
 		return WebClient.builder().build();
-	}
+	}*/
 
 }

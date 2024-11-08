@@ -1,3 +1,4 @@
+/*
 package com.hack.backend;
 
 import org.springframework.stereotype.Component;
@@ -36,3 +37,4 @@ public class FastApiClient {
         itemResponse.subscribe(body -> System.out.println("Response from /items/{}: " + body));
     }
 }
+*/
