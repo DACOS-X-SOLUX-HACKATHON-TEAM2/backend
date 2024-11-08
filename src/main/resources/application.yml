@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: backend
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cosmetics
+    username: admin
+    password: cos0000
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+logging:
+  level:
+    io:
+      netty: DEBUG
+
+jwt:
+  issuer: okm
+  access-expiration: 360000
+  secret-key: cThIIoDvwdueQB468K5xDc5633seEFoqwxjF_xSJyQQ
