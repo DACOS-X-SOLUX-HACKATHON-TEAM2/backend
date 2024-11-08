@@ -14,7 +14,7 @@ public class UserService {
     //private final PasswordEncoder encoder;
 
     @Transactional
-    public void join(JoinRequestDto request) {
+    public User join(JoinRequestDto request) {
         if (userRepository.existsByIdCustom(request.id())) {
             throw new IllegalArgumentException("User already exists");
         }
@@ -23,6 +23,6 @@ public class UserService {
                 .password(request.password())
                 .build();
 
-        userRepository.save(user);
+        return userRepository.save(user);
     }
 }
