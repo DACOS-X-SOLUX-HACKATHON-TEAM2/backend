@@ -1,6 +1,6 @@
-package com.hack.backend.survey;
+package com.hack.backend.survey.entity;
 
-import com.hack.backend.user.User;
+import com.hack.backend.user.entity.User;
 import jakarta.persistence.*;
 import lombok.*;
 

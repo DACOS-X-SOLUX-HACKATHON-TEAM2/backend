@@ -20,7 +20,7 @@ public class CosmeticsController {
 //        int usertype=user.getType();
 
 
-    }
-
-
 }
+
+
+

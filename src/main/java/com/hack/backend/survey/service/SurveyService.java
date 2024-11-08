@@ -1,4 +1,4 @@
-package com.hack.backend.survey;
+package com.hack.backend.survey.service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,11 +1,10 @@
-package com.hack.backend.user;
+package com.hack.backend.user.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Primary;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
